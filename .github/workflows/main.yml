@@ -27,9 +27,9 @@ jobs:
       - name: Clean up disk space before tests
         run: sudo docker system prune -a -f
       - name: Test Backend with pytest
-        run: pytest ./Backend/tests/
+        run: pytest ./backend/tests/
       - name: Test ML Service with pytest
-        run: pytest ./ml_service/tests/
+        run: pytest ./ml/tests/
       - name: Clean up disk space after tests
         run: sudo docker system prune -a -f
 
@@ -53,7 +53,7 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/my-backend-image:latest
         working-directory: ./backend  # Ensure this path is correct
 
-      - name: Build and push ml_service Docker image
+      - name: Build and push ml Docker image
         run: |
           docker build -t my-ml-service-image:latest .
           docker tag my-ml-service-image:latest ${{ secrets.DOCKER_USERNAME }}/my-ml-service-image:latest
