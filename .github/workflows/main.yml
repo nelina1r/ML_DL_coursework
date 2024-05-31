@@ -51,7 +51,7 @@ jobs:
           docker build -t my-backend-image:latest .
           docker tag my-backend-image:latest ${{ secrets.DOCKER_USERNAME }}/my-backend-image:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/my-backend-image:latest
-        working-directory: ./Backend  # Ensure this path is correct
+        working-directory: ./backend  # Ensure this path is correct
 
       - name: Build and push ml_service Docker image
         run: |
