@@ -31,7 +31,7 @@ model = AutoModelForCausalLM.from_pretrained(model_name)
 
 def generate_response(theme: str) -> str:
     formatted_input = "Please give a haiku on theme " + theme
-    input_ids = tokenizer.encode(formatted_input, return_tensors='pt')
+    input_ids = tokenizer.encode(formatted_input, return_tensors=None)
 
     with torch.no_grad():
         output = model.generate(input_ids, max_length=50)
