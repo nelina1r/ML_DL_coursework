@@ -87,5 +87,6 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           skip-existing: true
+          user: __token__
           password: ${{ secrets.TEST_PYPI_API_TOKEN }}
           working-directory: ./  # Adjust this if your setup.py is not in the root directory
