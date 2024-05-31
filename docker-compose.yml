@@ -1,0 +1,18 @@
+version: '3.10'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8880:80"
+    volumes:
+      - ./backend/app:/app/app
+
+  ml:
+    build: ./ml
+    ports:
+      - "8881:80"
+    volumes:
+      - ./ml/app:/app/app
+    environment:
+      - CUDA_VISIBLE_DEVICES=0

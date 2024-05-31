@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Interface</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Генерация Хокку</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="queryForm">
+                    <div class="form-group">
+                        <label for="theme">Введите тему</label>
+                        <input type="text" class="form-control" id="theme" placeholder="Введите тему">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Сгенерировать</button>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <div id="loading" class="spinner-border" role="status" style="display:none;">
+                    <span class="sr-only">Загрузка...</span>
+                </div>
+                <div id="response" class="alert alert-info mt-4" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
